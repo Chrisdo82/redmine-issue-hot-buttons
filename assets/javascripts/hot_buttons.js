@@ -157,6 +157,13 @@ jQuery(document).ready(function() {
       var original_element = $P(element_id);
       if (! original_element) return false;
 
+      // datepicker needs to be destroyed on original input before cloning
+      var has_datepicker = false;
+      if ($(original_element).hasClass('hasDatepicker')) {
+        $(original_element).datepicker('destroy');
+        has_datepicker = true;
+      }
+
       var mirrored_element = original_element.up().clone(true);
       mirrored_element.select('input, select, textarea').each(function(element){
         if ('hidden' === element.type) {
@@ -170,15 +177,13 @@ jQuery(document).ready(function() {
       mirrored_label.writeAttribute('for', tmp_id);
       
 
-      // Special magic for calendar inputs
-      var calendar_field = mirrored_element.select('img.calendar-trigger').first();
-      if (! Object.isUndefined(calendar_field)) {
-        calendar_field.removeAttribute('id');
-        Calendar.setup({
-          inputField : mirrored_element.select('input').first(),
-          ifFormat : '%Y-%m-%d',
-          button : calendar_field
-        });
+      // Special magic for calendar inputs 
+      // rewritten for jquery
+      if (has_datepicker == true) {
+          // add datepicker to mirrored input
+          $(mirrored_element).find("#" + tmp_id).datepicker(datepickerOptions);
+          // also re-add datepicker to original input
+          $(original_element).datepicker(datepickerOptions);
       }
 
       // Special magic for textareas
