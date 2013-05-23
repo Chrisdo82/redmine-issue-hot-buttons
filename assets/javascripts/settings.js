@@ -59,6 +59,7 @@ jQuery(document).ready(function() {
       var users_roles = Object.clone(this.user_roles);
       users_roles['current_user'] = '&lt;&lt; ' + this._('current_user') + ' &gt;&gt;';
       users_roles['nobody'] = '&lt;&lt; ' + this._('nobody') + ' &gt;&gt;';
+      users_roles['author'] = '&lt;&lt; ' + this._('author') + ' &gt;&gt;';
       var check_not_empty = {
         focus: this.callback.save_value,
         blur:  this.callback.restore_previous_if_empty
@@ -110,7 +111,8 @@ jQuery(document).ready(function() {
       var users_roles = Object.clone(this.user_roles);
       users_roles['current_user'] = '&lt;&lt; ' + this._('current_user') + ' &gt;&gt;';
       users_roles['nobody'] = '&lt;&lt; ' + this._('nobody') + ' &gt;&gt;';
-      
+      users_roles['author'] = '&lt;&lt; ' + this._('author') + ' &gt;&gt;';
+
       return {
         enabled: ['hidden', 1],
         internal_name: ['hidden', ''],
@@ -155,6 +157,7 @@ jQuery(document).ready(function() {
       var users_roles = Object.clone(this.user_roles);
       users_roles['current_user'] = '&lt;&lt; ' + this._('current_user') + ' &gt;&gt;';
       users_roles['nobody'] = '&lt;&lt; ' + this._('nobody') + ' &gt;&gt;';
+      users_roles['author'] = '&lt;&lt; ' + this._('author  ') + ' &gt;&gt;';
       var t = this;
       return {
         issue_assigned_to: ['multiselect', false, users_roles],
@@ -220,7 +223,7 @@ jQuery(document).ready(function() {
         var select = e.element();
         var multiple = true;
         select.select('option:selected').each(function(option){
-          multiple = multiple && -1 === ['current_user', 'nobody'].indexOf(option.value)
+          multiple = multiple && -1 === ['current_user', 'nobody', 'author'].indexOf(option.value)
         });
         
         if (multiple) {

@@ -1,6 +1,7 @@
 <%
   users_per_role = {
     :current_user => User.current.id,
+    :author => @issue.author.id,
     :nobody => nil
   };
   @project.users_by_role.each { |role, users|

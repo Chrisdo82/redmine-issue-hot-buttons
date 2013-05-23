@@ -265,7 +265,7 @@ jQuery(document).ready(function() {
               if (assign_to.length > 1) {
                 no_additional = no_additional && false;
               }
-              if (['current_user', 'nobody'].indexOf(assign_to[0]) === -1) {
+              if (['current_user', 'nobody', 'author'].indexOf(assign_to[0]) === -1) {
                 no_additional = no_additional && false;
               }
               break;
@@ -465,7 +465,7 @@ jQuery(document).ready(function() {
 
           case 'assign_to_other':
             var assign_to_roles = button_config.get('assign_to_other').evalJSON();
-            if (assign_to_roles.length == 1 && assign_to_roles.first() == 'current_user') {
+            if (assign_to_roles.length == 1 && ['current_user', 'author'].indexOf(assign_to_roles.first()) > -1) {
               return;
             }
             var mirrored_element = t.get_mirrored_element('issue_assigned_to_id');
@@ -555,7 +555,7 @@ jQuery(document).ready(function() {
 
           case 'assign_to_other':
             var assign_to = button.config.get('assign_to_other').evalJSON();
-            if (assign_to.length === 1 && ['current_user', 'nobody'].indexOf(assign_to[0]) > -1) {
+            if (assign_to.length === 1 && ['current_user', 'nobody', 'author'].indexOf(assign_to[0]) > -1) {
               var user_to_reassign = t.users_per_role[assign_to[0]];
               user_to_reassign = user_to_reassign
                 ? user_to_reassign.toString()

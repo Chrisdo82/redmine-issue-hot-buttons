@@ -15,6 +15,7 @@ en:
     caption: "Caption"
     current_user: "current user"
     nobody: "nobody"
+    author: "author"
     collapse_all: "Collapse all"
     expand_all: "Expand all"
 
