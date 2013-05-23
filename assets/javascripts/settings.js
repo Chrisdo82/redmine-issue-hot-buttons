@@ -157,7 +157,7 @@ jQuery(document).ready(function() {
       var users_roles = Object.clone(this.user_roles);
       users_roles['current_user'] = '&lt;&lt; ' + this._('current_user') + ' &gt;&gt;';
       users_roles['nobody'] = '&lt;&lt; ' + this._('nobody') + ' &gt;&gt;';
-      users_roles['author'] = '&lt;&lt; ' + this._('author  ') + ' &gt;&gt;';
+      users_roles['author'] = '&lt;&lt; ' + this._('author') + ' &gt;&gt;';
       var t = this;
       return {
         issue_assigned_to: ['multiselect', false, users_roles],

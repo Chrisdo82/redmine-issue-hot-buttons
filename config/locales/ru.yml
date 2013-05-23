@@ -15,6 +15,7 @@ ru:
     caption: "Название"
     nobody: "никого"
     current_user: "текущего пользователя"
+    author: "issue author"
     collapse_all: "Свернуть все"
     expand_all: "Развернуть все"
 

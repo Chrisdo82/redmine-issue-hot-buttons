@@ -14,6 +14,7 @@ zh:
     select_hidden_elements: "新增可选配置"
     caption: "标题"
     current_user: "当前用户"
+    author: "issue author"
     nobody_user: "不设置用户"
     collapse_all: "全部收拢"
     expand_all: "全部展开"
