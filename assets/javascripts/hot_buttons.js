@@ -367,7 +367,7 @@ jQuery(document).ready(function() {
       var t = this;
       
       //var button = new Element('button', {'class': 'action'})
-      var button = new Element('button', {'class': 'action'})  //collapse_section'})
+      var button = new Element('button', {'class': 'action ' + this.config.get('caption')})  //collapse_section'})
         .insert(this.config.get('caption'));
       button.config = this.config;
 
