@@ -18,8 +18,6 @@
 	background-image: linear-gradient(top, #eee, #ccc);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
 	border: 1px solid #777;
-	padding: 0 1.5em;
-	margin: 0.5em;
 	font: bold 1em/2em Arial, Helvetica;
 	text-decoration: none;
 	color: #333;
@@ -30,6 +28,14 @@
 	-moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
 	-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
 	box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+	
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	background-position-y: 50%;
+	background-position-x: 5%;
+	padding-left: 30px;
+
 }
 
 #issue_hot_buttons button.action:hover {
@@ -61,12 +67,36 @@
     pointer-events: none;
 }
 
-#issue_hot_buttons button.action.In.Progress:before {
-    content:"\21BB";
+#issue_hot_buttons button.action.TO.BE.ASSIGNED {
+	background-image: url('../images/to_be_assigned.gif');
 }
 
-#issue_hot_buttons button.action.Close:before {
-    content:"\2718";
+#issue_hot_buttons button.action.ASSIGN.TO {
+	background-image: url('../images/assign_to.gif');
+}
+
+#issue_hot_buttons button.action.IN.PROGRESS {
+	background-image: url('../images/in_progress.gif');
+}
+
+#issue_hot_buttons button.action.RE-ASSIGN.TO {
+	background-image: url('../images/assign_to.gif');
+}
+
+#issue_hot_buttons button.action.ON.HOLD {
+	background-image: url('../images/on_hold.gif');
+}
+
+#issue_hot_buttons button.action.REJECT {
+	background-image: url('../images/reject.gif');
+}
+
+#issue_hot_buttons button.action.CANCEL {
+	background-image: url('../images/cancel.gif');
+}
+
+#issue_hot_buttons button.action.REVIEWED {
+	background-image: url('../images/reviewed.gif');
 }
 
 #issue_hot_buttons button.action:active  {
@@ -76,9 +106,17 @@
 	position: relative;
 	top: 1px;
 }
+
 #issue_hot_buttons button.action:focus {
 	outline: 0;
 	background: #fafafa;
+	
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	background-position-y: 50%;
+	background-position-x: 5%;
+	padding-left: 30px;
 }
 #issue_hot_buttons_additional {
   border: 1px solid #D7D7D7;
