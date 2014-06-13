@@ -504,8 +504,8 @@ jQuery(document).ready(function() {
                             comment_element.insert(new Element('label').update(t._('notes')));
                             comment_element.insert(new Element('textarea', {
                                 'class': 'notes',
-                                cols: 30,
-                                rows: 5
+                                cols: 80,
+                                rows: 10
                             }));
                             var comment_default_value = button_config.get('set_comment_value');
                             if (comment_default_value) {
@@ -516,7 +516,7 @@ jQuery(document).ready(function() {
                         break;
 
                     case 'include_file_attachment':
-                        var file_attachment_block = $('attachments_fields').up();
+                        var file_attachment_block = $P('attachments_fields').up();
                         file_attachment_block.addClassName('attachments_wrapper');
                         elements.push(file_attachment_block);
                         break;
@@ -578,7 +578,7 @@ jQuery(document).ready(function() {
                         case 'include_comment':
                             var include_comment = button.config.get('include_comment').evalJSON();
                             if (include_comment) {
-                                $P('notes').value = button.up().select('textarea.notes').first().value;
+                                $P('issue_notes').value = button.up().select('textarea.notes').first().value;
                             }
                             break;
 
